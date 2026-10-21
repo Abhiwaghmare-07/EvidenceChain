@@ -1,0 +1,50 @@
+# ─── Build Artifacts ──────────────────────────────────────────────────────────
+backend/target/
+frontend/node_modules/
+frontend/dist/
+
+# ─── H2 Database & Runtime Data ───────────────────────────────────────────────
+# Never commit the live H2 database or lock files
+backend/data/
+data/
+*.mv.db
+*.trace.db
+*.lock.db
+
+# ─── Evidence Storage (Uploaded Evidence Files) ───────────────────────────────
+# IMPORTANT: Physical evidence files must NEVER be committed to version control.
+# Only SHA-256 hashes are stored on the blockchain/ledger; raw files stay local.
+backend/storage/
+storage/
+
+# ─── Environment & Secrets ────────────────────────────────────────────────────
+# Use environment variables for JWT_SECRET, DB_PASS, etc. (see README.md)
+.env
+.env.local
+.env.production
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── IDEs ─────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+
+# ─── OS Files ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Vite / Node ──────────────────────────────────────────────────────────────
+frontend/.vite/
+
+# ─── Maven Wrapper Binaries ───────────────────────────────────────────────────
+!backend/mvnw
+!backend/mvnw.cmd
